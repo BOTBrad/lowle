@@ -5220,7 +5220,7 @@ var $elm$core$Task$perform = F2(
 		return $elm$core$Task$command(
 			A2($elm$core$Task$map, toMessage, task));
 	});
-var $elm$browser$Browser$element = _Browser_element;
+var $elm$browser$Browser$document = _Browser_document;
 var $author$project$Lowle$NewAnswer = function (a) {
 	return {$: 3, a: a};
 };
@@ -5706,43 +5706,49 @@ var $elm$html$Html$Attributes$placeholder = $elm$html$Html$Attributes$stringProp
 var $elm$html$Html$Attributes$type_ = $elm$html$Html$Attributes$stringProperty('type');
 var $elm$html$Html$Attributes$value = $elm$html$Html$Attributes$stringProperty('value');
 var $author$project$Lowle$view = function (model) {
-	return A2(
-		$elm$html$Html$form,
-		_List_fromArray(
+	return {
+		ap: _List_fromArray(
 			[
-				$elm$html$Html$Events$onSubmit($author$project$Lowle$Guess)
+				A2(
+				$elm$html$Html$form,
+				_List_fromArray(
+					[
+						$elm$html$Html$Events$onSubmit($author$project$Lowle$Guess)
+					]),
+				_List_fromArray(
+					[
+						$author$project$Lowle$guide,
+						A2(
+						$elm$html$Html$input,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$placeholder('Text to reverse'),
+								$elm$html$Html$Attributes$value(model.r),
+								$elm$html$Html$Events$onInput($author$project$Lowle$Change)
+							]),
+						_List_Nil),
+						A2(
+						$elm$html$Html$input,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$type_('button'),
+								$elm$html$Html$Events$onClick($author$project$Lowle$Reset),
+								$elm$html$Html$Attributes$value('New Word')
+							]),
+						_List_Nil),
+						A2(
+						$elm$html$Html$div,
+						_List_Nil,
+						A2(
+							$elm$core$List$map,
+							$author$project$Lowle$compare(model.G),
+							$elm$core$List$reverse(model.x)))
+					]))
 			]),
-		_List_fromArray(
-			[
-				$author$project$Lowle$guide,
-				A2(
-				$elm$html$Html$input,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$placeholder('Text to reverse'),
-						$elm$html$Html$Attributes$value(model.r),
-						$elm$html$Html$Events$onInput($author$project$Lowle$Change)
-					]),
-				_List_Nil),
-				A2(
-				$elm$html$Html$input,
-				_List_fromArray(
-					[
-						$elm$html$Html$Attributes$type_('button'),
-						$elm$html$Html$Events$onClick($author$project$Lowle$Reset),
-						$elm$html$Html$Attributes$value('New Word')
-					]),
-				_List_Nil),
-				A2(
-				$elm$html$Html$div,
-				_List_Nil,
-				A2(
-					$elm$core$List$map,
-					$author$project$Lowle$compare(model.G),
-					$elm$core$List$reverse(model.x)))
-			]));
+		aD: 'Lowle'
+	};
 };
-var $author$project$Lowle$main = $elm$browser$Browser$element(
+var $author$project$Lowle$main = $elm$browser$Browser$document(
 	{aw: $author$project$Lowle$init, aC: $author$project$Lowle$subscriptions, aE: $author$project$Lowle$update, aF: $author$project$Lowle$view});
 _Platform_export({'Lowle':{'init':$author$project$Lowle$main(
 	$elm$json$Json$Decode$succeed(0))(0)}});}(this));

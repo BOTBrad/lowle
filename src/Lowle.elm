@@ -23,7 +23,7 @@ get_answer idx =
 
 
 main =
-  Browser.element
+  Browser.document
     { init = init
     , update = update
     , subscriptions = subscriptions
@@ -114,11 +114,15 @@ guide =
   |> List.map (\(bgc, content) -> div [ style "background-color" bgc, style "display" "inline-block"] [text content])
   |> div []
 
-view : Model -> Html Msg
+view : Model -> Browser.Document Msg
 view model =
-  Html.form [onSubmit Guess]
-    [ guide
-    , input [ placeholder "Text to reverse", value model.current, onInput Change ] []
-    , input [ type_ "button", onClick Reset, value "New Word"] []
-    , div [] (List.map (compare model.answer) (List.reverse model.guesses))
+  { title = "Lowle"
+  , body =
+    [ Html.form [onSubmit Guess]
+      [ guide
+      , input [ placeholder "Text to reverse", value model.current, onInput Change ] []
+      , input [ type_ "button", onClick Reset, value "New Word"] []
+      , div [] (List.map (compare model.answer) (List.reverse model.guesses))
+      ]
     ]
+  }
