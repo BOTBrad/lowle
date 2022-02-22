@@ -116,11 +116,11 @@ guide =
 
 view : Model -> Browser.Document Msg
 view model =
-  { title = "Lowle"
+  { title = "lowle"
   , body =
     [ Html.form [onSubmit Guess]
       [ guide
-      , input [ placeholder "Text to reverse", value model.current, onInput Change ] []
+      , input [ placeholder "lowle", value model.current, onInput Change ] []
       , input [ type_ "button", onClick Reset, value "New Word"] []
       , div [] (List.map (compare model.answer) (List.reverse model.guesses))
       ]

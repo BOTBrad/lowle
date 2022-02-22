@@ -5722,7 +5722,7 @@ var $author$project$Lowle$view = function (model) {
 						$elm$html$Html$input,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$placeholder('Text to reverse'),
+								$elm$html$Html$Attributes$placeholder('lowle'),
 								$elm$html$Html$Attributes$value(model.r),
 								$elm$html$Html$Events$onInput($author$project$Lowle$Change)
 							]),
@@ -5745,7 +5745,7 @@ var $author$project$Lowle$view = function (model) {
 							$elm$core$List$reverse(model.x)))
 					]))
 			]),
-		aD: 'Lowle'
+		aD: 'lowle'
 	};
 };
 var $author$project$Lowle$main = $elm$browser$Browser$document(
