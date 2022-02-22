@@ -1,3 +1,5 @@
+module Lowle exposing (..)
+
 import Array
 import Browser
 import Html exposing (Html, Attribute, form, div, span, input, button, text)
